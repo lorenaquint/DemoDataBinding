@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DemoDataBinding"
+             x:Class="DemoDataBinding.MainPage"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:Persona x:Key="persona1"
+                           Nombre="Mariana"
+                           Pais="Brasil">
+
+            </local:Persona>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+    <StackLayout HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="CenterAndExpand">
+            <Label Text="{Binding Nombre,Source={StaticResource persona1 },Mode=TwoWay}"></Label>
+            <Label Text="{Binding Pais,Source={StaticResource persona1 },Mode=TwoWay}"></Label>
+        <Button x:Name="btnEnviar"
+                Text="Enviar"></Button>
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
