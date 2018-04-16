@@ -13,7 +13,7 @@ namespace DemoDataBinding
 		{
 			InitializeComponent();
 
-			MainPage = new DemoDataBinding.MainPage();
+			MainPage = new NavigationPage( new MainPage());
 		}
 
 		protected override void OnStart ()

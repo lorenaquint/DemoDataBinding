@@ -3,23 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:DemoDataBinding"
              x:Class="DemoDataBinding.MainPage"
+             Title="Listado de Paises"
              >
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local:Persona x:Key="persona1"
+            <!--<local:Persona x:Key="persona1"
                            Nombre="Mariana"
                            Pais="Brasil">
 
-            </local:Persona>
+            </local:Persona>-->
+            <local:Datos x:Key="Datos1">
+                
+            </local:Datos>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-    <StackLayout HorizontalOptions="CenterAndExpand"
+    <!--<StackLayout HorizontalOptions="CenterAndExpand"
                  VerticalOptions="CenterAndExpand">
             <Label Text="{Binding Nombre,Source={StaticResource persona1 },Mode=TwoWay}"></Label>
             <Label Text="{Binding Pais,Source={StaticResource persona1 },Mode=TwoWay}"></Label>
         <Button x:Name="btnEnviar"
                 Text="Enviar"></Button>
-    </StackLayout>
+    </StackLayout>-->
+        <Grid>
+            <ListView ItemsSource="{Binding Personas, Source={StaticResource Datos1}}"/>
+
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

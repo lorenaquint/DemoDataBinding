@@ -5,36 +5,42 @@ using System.Text;
 
 namespace DemoDataBinding
 {
-    public class Persona:INotifyPropertyChanged
-    {
-        
+    public class Persona:Notificable
+    {  
         private string pais;
 
         public string Pais
         {
             get { return pais; }
-            set { pais = value;
-                OnPropertyChanged("Pais");
+            set
+            {
+                if (pais == value)
+                {
+                    return;
+                }
+                pais = value;
+                OnPropertyChanged();
             }
         }
-
-
         private string nombre;
 
         public string Nombre
         {
             get { return nombre; }
-            set { nombre = value;
-                OnPropertyChanged("Nombre");
+            set
+            {
+                if (nombre == value)
+                {
+                    return;
+                }
+                nombre = value;
+                OnPropertyChanged();
             }
         }
-
-        #region Implementación
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(string propertyName)
+        public override string ToString()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            return $"{Nombre} de {Pais}";
         }
-        #endregion
+
     }
 }
