@@ -8,6 +8,26 @@ namespace DemoDataBinding
     public class Persona:Notificable
     {  
         private string pais;
+        private Persona perSeleccion;
+
+        public Persona PerSeleccion
+        {
+            get
+            { return perSeleccion;
+            }
+            set
+            {
+                if (perSeleccion == value)
+                {
+                    return;
+                }
+
+                 perSeleccion = value;
+                 OnPropertyChanged();
+            }
+        }
+
+
 
         public string Pais
         {
@@ -22,6 +42,7 @@ namespace DemoDataBinding
                 OnPropertyChanged();
             }
         }
+       
         private string nombre;
 
         public string Nombre

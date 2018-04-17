@@ -12,7 +12,7 @@
                            Pais="Brasil">
 
             </local:Persona>-->
-            <local:Datos x:Key="Datos1">
+            <local:Datos x:Key="datos1">
                 
             </local:Datos>
         </ResourceDictionary>
@@ -25,10 +25,24 @@
         <Button x:Name="btnEnviar"
                 Text="Enviar"></Button>
     </StackLayout>-->
-        <Grid>
-            <ListView ItemsSource="{Binding Personas, Source={StaticResource Datos1}}"/>
+        <Grid BindingContext="{Binding Source={StaticResource datos1}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <ListView  x:Name="lstPersonas"
+                       ItemsSource="{Binding Personas}"
+                      SelectedItem="{Binding PerSeleccion,Mode=TwoWay}"
+                     />
+            <StackLayout Grid.Row="1"
+                         BindingContext="{Binding PerSeleccion}"
+                         HorizontalOptions="Center">
+                <Label Text="{Binding Nombre, Mode=TwoWay}"
+                       TextColor="Black"/>
+                <Label Text="{Binding Pais,Mode=TwoWay}"/>
 
-
+            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
+<!--BindingContext="{Binding SelectedItem,Source={x:Reference lstPersonas}}"-->
