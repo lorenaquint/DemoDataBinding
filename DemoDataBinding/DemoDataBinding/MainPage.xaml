@@ -7,24 +7,13 @@
              >
     <ContentPage.Resources>
         <ResourceDictionary>
-            <!--<local:Persona x:Key="persona1"
-                           Nombre="Mariana"
-                           Pais="Brasil">
-
-            </local:Persona>-->
             <local:Datos x:Key="datos1">
                 
             </local:Datos>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-    <!--<StackLayout HorizontalOptions="CenterAndExpand"
-                 VerticalOptions="CenterAndExpand">
-            <Label Text="{Binding Nombre,Source={StaticResource persona1 },Mode=TwoWay}"></Label>
-            <Label Text="{Binding Pais,Source={StaticResource persona1 },Mode=TwoWay}"></Label>
-        <Button x:Name="btnEnviar"
-                Text="Enviar"></Button>
-    </StackLayout>-->
+  
         <Grid BindingContext="{Binding Source={StaticResource datos1}}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*"/>
@@ -45,4 +34,4 @@
         </Grid>
     </ContentPage.Content>
 </ContentPage>
-<!--BindingContext="{Binding SelectedItem,Source={x:Reference lstPersonas}}"-->
+
