@@ -8,24 +8,43 @@ namespace DemoDataBinding
     public class Persona:Notificable
     {  
         private string pais;
-        private Persona perSeleccion;
+        private DateTime dateTime;
+        private decimal  saldo;
 
-        public Persona PerSeleccion
+        public decimal  Saldo
         {
             get
-            { return perSeleccion;
+            {
+                return saldo;
             }
             set
             {
-                if (perSeleccion == value)
+                if (saldo == value)
                 {
                     return;
                 }
-
-                 perSeleccion = value;
-                 OnPropertyChanged();
+                saldo = value;
+                OnPropertyChanged();
             }
         }
+
+        public DateTime FechaNacimiento
+        {
+            get
+            {
+                return dateTime;
+            }
+            set
+            {
+                if (FechaNacimiento == value)
+                {
+                    return;
+                }
+                dateTime = value;
+                OnPropertyChanged();
+            }
+        }
+
 
 
 
@@ -60,7 +79,7 @@ namespace DemoDataBinding
         }
         public override string ToString()
         {
-            return $"{Nombre} de {Pais}";
+            return $"{Nombre} | {Pais} | {FechaNacimiento} | {Saldo}";
         }
 
     }

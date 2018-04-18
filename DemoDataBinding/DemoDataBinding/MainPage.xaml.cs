@@ -13,8 +13,8 @@ namespace DemoDataBinding
 		{
 			InitializeComponent();
            
-         
-           
-		}
+        }
+
+      
     }
 }
