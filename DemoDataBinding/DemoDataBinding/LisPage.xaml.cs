@@ -25,7 +25,8 @@ namespace DemoDataBinding
                 new MainPage()
             };
 
-            listPages.ItemsSource = ListPages;
+            //listPages.ItemsSource = ListPages;
+            this.BindingContext = this;
             listPages.ItemSelected += ListPages_ItemSelected;
 
 

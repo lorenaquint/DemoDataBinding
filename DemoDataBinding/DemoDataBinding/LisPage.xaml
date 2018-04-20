@@ -7,6 +7,7 @@
     
     <ContentPage.Content>
         <ListView x:Name="listPages"
+                  ItemsSource="{Binding ListPages}"
                  >
             <ListView.ItemTemplate>
                 <DataTemplate>
