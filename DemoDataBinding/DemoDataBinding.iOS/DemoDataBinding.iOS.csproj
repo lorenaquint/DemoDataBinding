@@ -124,8 +124,11 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\DemoDataBinding\DemoDataBinding.csproj">
-      <Project>{37DBB0B6-DEA8-404C-9696-05F20A3B1BC0}</Project>
+      <Project>{E88E9E6A-BA26-498F-BD38-F7BE055C87C3}</Project>
       <Name>DemoDataBinding</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\ic_chevron_right.png" />
   </ItemGroup>
 </Project>

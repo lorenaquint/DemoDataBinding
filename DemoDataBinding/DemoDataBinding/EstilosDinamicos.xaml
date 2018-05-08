@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="DemoDataBinding.EstilosDinamicos"
+             Title="Estilso dinamicos">
+    <ContentView.Content>
+
+        <StackLayout>
+            <Label Text="Title style"
+                   Style="{DynamicResource TitleStyle}"/>
+            <Label Text="Subtitulo style"
+                   Style="{DynamicResource SubtitleTextStyle}"/>
+            <Label Text="Body style"
+                   Style="{DynamicResource BodyStyle}"/>
+            <Label Text="Caption style"
+                   Style="{DynamicResource CaptionStyle}"/>
+
+           <Label Text="List item detail text style style"
+                   Style="{DynamicResource ListItemDetailTextStyle}"/>
+            <Label Text="List item  text  style"
+                   Style="{DynamicResource ListItemTextStyle}"/>
+                
+            
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

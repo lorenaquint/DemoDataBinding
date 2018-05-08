@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DemoDataBinding.LisPage"
@@ -8,12 +8,58 @@
     <ContentPage.Content>
         <ListView x:Name="listPages"
                   ItemsSource="{Binding ListPages}"
-                 >
+                  HasUnevenRows="true"
+                  RowHeight="50"
+                  SeparatorVisibility="None">
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Label Text="Ejemplos DataBinfing"
+                               TextColor="Blue"
+                               HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                               FontSize="Large"/>
+                    </StackLayout>
+                  </DataTemplate>
+                </ListView.HeaderTemplate>
+            
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Title}" />
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" ></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Title}" 
+                               FontSize="Large"
+                               FontAttributes="Bold"
+                               TextColor="Blue"/>
+                        <Image Source="ic_chevron_right"
+                               Grid.Column="1"
+                               HorizontalOptions="End"
+                               />
+                        </Grid>
+
+                    </ViewCell>
+
                 </DataTemplate>
             </ListView.ItemTemplate>
+            <ListView.FooterTemplate>
+            <DataTemplate>
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="Center">
+                    <Label Text="Todos los derechos"
+                           TextColor="Green"></Label>
+                    <Label Text="reservados"
+                           TextColor="Red"></Label>
+                </StackLayout>
+            </DataTemplate>
+        </ListView.FooterTemplate>
         </ListView>
     </ContentPage.Content>
 </ContentPage>
+
+<!--Header="Ejemplos de Binding"
+                  Footer="Desarrollo Móvil"-->

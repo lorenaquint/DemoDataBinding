@@ -21,8 +21,10 @@ namespace DemoDataBinding
 
             ListPages = new List<Page>()
             {
+				new ED(),
                 new DataBinding1(),
                 new MainPage()
+
             };
 
             //listPages.ItemsSource = ListPages;
